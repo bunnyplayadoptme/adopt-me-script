@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BUNNY PLAY ADOPT ME SCRIPT</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #8a2be2;
+    }
+
+    .script-box {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #8a2be2;
+      margin: 20px auto;
+      max-width: 700px;
+      word-break: break-word;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    button {
+      background-color: #8a2be2;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #a54fff;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    a {
+      color: #8a2be2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>BUNNY PLAY</header>
+
+  <h2>Adopt Me SCRIPT</h2>
+
+  <div class="script-box" id="scriptBox">
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Newtryer/AdoptMeScript/refs/heads/main/AdoptMeScript.lua'))()
+  </div>
+
+  <div class="buttons">
+    <button onclick="copyScript()">Copy Script</button>
+    <button onclick="downloadScript()">Download .lua</button>
+  </div>
+
+  <footer>
+    Made by SHADOW SCRIPTING | <a href="https://youtube.com" target="_blank">YouTube</a>
+  </footer>
+
+  <script>
+    function copyScript() {
+      const text = document.getElementById('scriptBox').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Script copied to clipboard!");
+      });
+    }
+
+    function downloadScript() {
+      const script = document.getElementById('scriptBox').innerText;
+      const blob = new Blob([script], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "AdoptMe.lua";
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
